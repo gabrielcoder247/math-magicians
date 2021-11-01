@@ -3,7 +3,7 @@
 
 # Math Magicians
 
- #### This project is a the first milestone on building the Math Magicians apps
+ #### This project is  the first milestone on building the Math Magicians apps
 
 
 ![screenshot](/react-demo.png)
@@ -18,9 +18,10 @@ Additional description about the project and its features.
 
 
 ### Install dependancies
-Install dependancies that will css and html error and bugs for the app to run
-then run to check html error and bug
-`npm install --save-dev stylelint@13.x stylelint-scss@3.x stylelint-config-standard@21.x stylelint-csstree-validator@1.x` then run to check for css errors `npx stylelint "**/*.{css,scss}"`
+- To create react app `npx create-react-app app-name`
+- Install dependancies that will css and html error and bugs for the app to run
+ then run to check html error and bug 
+`npm install --save-dev stylelint@13.x stylelint-scss@3.x stylelint-config-standard@21.x stylelint-csstree-validator@1.x` then run to check for css errors `npx     stylelint "**/*.{css,scss}"`
 
 
 ### How to run
