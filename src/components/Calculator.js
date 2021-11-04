@@ -1,400 +1,111 @@
 import React from 'react';
 import './Calculator.css';
+import calculate from '../logic/calculate';
 
-// eslint-disable-next-line react/prefer-stateless-function
-class CalculatorUI extends React.Component {
-  render() {
-    return (
-      <div id="keyboard">
-        <input
-          type="text"
-          id="display"
-          placeholder="0"
-        />
-        <br />
-        <button type="button">
-          {' '}
-          { ' ' }
-          AC
-          {' '}
-          { ' ' }
-          {' '}
-
-        </button>
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        <button type="button">
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-          {' '}
-          +
-          /-
-        </button>
-        {' '}
-        { ' ' }
-        {' '}
-        <button type="button">
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-          {' '}
-          %
-          {' '}
-          { ' ' }
-          {' '}
-
-        </button>
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        <button
-          type="button"
-          className="operators"
-        >
-          {' '}
-          { ' ' }
-          /
-          {' '}
-          { ' ' }
-          {' '}
-
-        </button>
-        {' '}
-        { ' ' }
-        {' '}
-        <button type="button">
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-          7
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-
-        </button>
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        <button type="button">
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-          8
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-
-        </button>
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        <button type="button">
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-          9
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-
-        </button>
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        <button
-          type="button"
-          className="operators"
-        >
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-          {' '}
-          *
-          {' '}
-          { ' ' }
-          {' '}
-
-        </button>
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        <button type="button">
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-          4
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-
-        </button>
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        <button type="button">
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-          5
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-
-        </button>
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        <button type="button">
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-          6
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-
-        </button>
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        <button
-          type="button"
-          className="operator"
-        >
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-          {' '}
-          -
-          {' '}
-          { ' ' }
-          {' '}
-
-        </button>
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        <button type="button">
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-          1
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-
-        </button>
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        <button type="button">
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-          2
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-
-        </button>
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        <button type="button">
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-          3
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-
-        </button>
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        <button
-          type="button"
-          className="operators"
-        >
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-          {' '}
-          +
-          {' '}
-          { ' ' }
-          {' '}
-
-        </button>
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        <button
-          type="button"
-          id="zero"
-        >
-          {' '}
-          { ' ' }
-          0
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-          {' '}
-
-        </button>
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        <button type="button">
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-          .
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-          {' '}
-          { ' ' }
-
-        </button>
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-        {' '}
-        <button
-          type="button"
-          className="operator"
-        >
-          {' '}
-          =
-          { ' ' }
-          {' '}
-          { ' ' }
-          {' '}
-
-        </button>
-        {' '}
-        { ' ' }
-        {' '}
-        { ' ' }
-
-      </div>
-    );
+class Calculator extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      obj: {
+        total: null,
+        next: null,
+        operation: null,
+      },
+    };
+    this.storeObj = this.storeObj.bind(this);
   }
+  /* eslint-disable*/
+    storeObj(e) {
+        let newObj = calculate(this.state.obj, e.target.value);
+        this.setState({
+            obj: newObj,
+        });
+    }
+
+    render() {
+        return ( <
+            div id = "keyboard" >
+            <
+            input type = "text"
+            id = "display"
+            value = { this.state.obj.next ? this.state.obj.next : this.state.obj.total ? this.state.obj.total : 0 }
+            /> <
+            br / >
+            <
+            Button value = "AC"
+            storeFunc = { this.storeObj }
+            /> <
+            Button value = "+/-"
+            storeFunc = { this.storeObj }
+            /> <
+            Button value = "%"
+            storeFunc = { this.storeObj }
+            /> <
+            Button value = "/"
+            storeFunc = { this.storeObj }
+            className = "operators" / >
+            <
+            Button value = "7"
+            storeFunc = { this.storeObj }
+            /> <
+            Button value = "8"
+            storeFunc = { this.storeObj }
+            /> <
+            Button value = "9"
+            storeFunc = { this.storeObj }
+            /> <
+            Button value = "*"
+            storeFunc = { this.storeObj }
+            className = "operators" / >
+            <
+            Button value = "4"
+            storeFunc = { this.storeObj }
+            /> <
+            Button value = "5"
+            storeFunc = { this.storeObj }
+            /> <
+            Button value = "6"
+            storeFunc = { this.storeObj }
+            /> <
+            Button value = "-"
+            storeFunc = { this.storeObj }
+            className = "operators" / >
+            <
+            Button value = "1"
+            storeFunc = { this.storeObj }
+            /> <
+            Button value = "2"
+            storeFunc = { this.storeObj }
+            /> <
+            Button value = "3"
+            storeFunc = { this.storeObj }
+            /> <
+            Button value = "+"
+            storeFunc = { this.storeObj }
+            className = "operators" / >
+            <
+            Button value = "0"
+            storeFunc = { this.storeObj }
+            id = "zero" / >
+            <
+            Button value = "."
+            storeFunc = { this.storeObj }
+            /> <
+            Button value = "="
+            storeFunc = { this.storeObj }
+            className = "operators" / >
+            <
+            /div>
+        );
+    }
 }
 
-export default CalculatorUI;
+function Button(props) {
+    return <button type = "button"
+    onClick = { props.storeFunc }
+    value = { props.value }
+    className = { props.className }
+    id = { props.id } > { props.value } < /button>
+}
+/* eslint-enable */
+export default Calculator;
