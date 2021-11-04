@@ -1,6 +1,7 @@
 import React from 'react';
 import './Calculator.css';
 import calculate from '../logic/calculate';
+import Button from './button';
 
 class Calculator extends React.Component {
   constructor(props) {
@@ -100,12 +101,5 @@ class Calculator extends React.Component {
     }
 }
 
-function Button(props) {
-    return <button type = "button"
-    onClick = { props.storeFunc }
-    value = { props.value }
-    className = { props.className }
-    id = { props.id } > { props.value } < /button>
-}
-/* eslint-enable */
+
 export default Calculator;
