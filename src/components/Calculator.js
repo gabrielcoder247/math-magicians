@@ -1,105 +1,48 @@
-import React from 'react';
-import './Calculator.css';
-import calculate from '../logic/calculate';
-import Button from './button';
+import React, { useState } from "react";
+import "./Calculator.css";
 
-class Calculator extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      obj: {
-        total: null,
-        next: null,
-        operation: null,
-      },
-    };
-    this.storeObj = this.storeObj.bind(this);
+import Button from "./button";
+
+const Calculator = () => {
+  const [obj, setObj] = useState({
+    total: null,
+    next: null,
+    operation: null,
+  });
+
+  let someValue = "0";
+  const { total, next } = obj;
+  if (next !== null) {
+    someValue = next;
   }
-  /* eslint-disable*/
-    storeObj(e) {
-        let newObj = calculate(this.state.obj, e.target.value);
-        this.setState({
-            obj: newObj,
-        });
-    }
+  if (total !== null && next === null) {
+    someValue = total;
+  }
 
-    render() {
-        return ( <
-            div id = "keyboard" >
-            <
-            input type = "text"
-            id = "display"
-            value = { this.state.obj.next ? this.state.obj.next : this.state.obj.total ? this.state.obj.total : 0 }
-            /> <
-            br / >
-            <
-            Button value = "AC"
-            storeFunc = { this.storeObj }
-            /> <
-            Button value = "+/-"
-            storeFunc = { this.storeObj }
-            /> <
-            Button value = "%"
-            storeFunc = { this.storeObj }
-            /> <
-            Button value = "/"
-            storeFunc = { this.storeObj }
-            className = "operators" / >
-            <
-            Button value = "7"
-            storeFunc = { this.storeObj }
-            /> <
-            Button value = "8"
-            storeFunc = { this.storeObj }
-            /> <
-            Button value = "9"
-            storeFunc = { this.storeObj }
-            /> <
-            Button value = "*"
-            storeFunc = { this.storeObj }
-            className = "operators" / >
-            <
-            Button value = "4"
-            storeFunc = { this.storeObj }
-            /> <
-            Button value = "5"
-            storeFunc = { this.storeObj }
-            /> <
-            Button value = "6"
-            storeFunc = { this.storeObj }
-            /> <
-            Button value = "-"
-            storeFunc = { this.storeObj }
-            className = "operators" / >
-            <
-            Button value = "1"
-            storeFunc = { this.storeObj }
-            /> <
-            Button value = "2"
-            storeFunc = { this.storeObj }
-            /> <
-            Button value = "3"
-            storeFunc = { this.storeObj }
-            /> <
-            Button value = "+"
-            storeFunc = { this.storeObj }
-            className = "operators" / >
-            <
-            Button value = "0"
-            storeFunc = { this.storeObj }
-            id = "zero" / >
-            <
-            Button value = "."
-            storeFunc = { this.storeObj }
-            /> <
-            Button value = "="
-            storeFunc = { this.storeObj }
-            className = "operators" / >
-            <
-            /div>
-        );
-    }
-}
-
+  return (
+    <div id="keyboard">
+      <input type="text" id="display" value={someValue} /> <br />
+      <Button value="AC" obj={obj} func={setObj} />{" "}
+      <Button value="+/-" obj={obj} func={setObj} />{" "}
+      <Button value="%" obj={obj} func={setObj} />{" "}
+      <Button value="/" obj={obj} func={setObj} className="operators" />
+      <Button value="7" obj={obj} func={setObj} />{" "}
+      <Button value="8" obj={obj} func={setObj} />{" "}
+      <Button value="9" obj={obj} func={setObj} />{" "}
+      <Button value="*" obj={obj} func={setObj} className="operators" />
+      <Button value="4" obj={obj} func={setObj} />{" "}
+      <Button value="5" obj={obj} func={setObj} />{" "}
+      <Button value="6" obj={obj} func={setObj} />{" "}
+      <Button value="-" obj={obj} func={setObj} className="operators" />
+      <Button value="1" obj={obj} func={setObj} />{" "}
+      <Button value="2" obj={obj} func={setObj} />{" "}
+      <Button value="3" obj={obj} func={setObj} />{" "}
+      <Button value="+" obj={obj} func={setObj} className="operators" />
+      <Button value="0" obj={obj} func={setObj} id="zero" />
+      <Button value="." obj={obj} func={setObj} />{" "}
+      <Button value="=" obj={obj} func={setObj} className="operators" />
+    </div>
+  );
+};
 
 export default Calculator;
