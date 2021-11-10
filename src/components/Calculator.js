@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Calculator.css";
+import "./Css/Calculator.css";
 
 import Button from "./button";
 
