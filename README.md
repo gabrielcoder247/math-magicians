@@ -6,7 +6,7 @@
  #### This project is  the first milestone on building the Math Magicians apps
 
 
-![screenshot](/react-demo.png)
+![screenshot](/math-magicians.png)
 
 Additional description about the project and its features.
 
@@ -15,6 +15,8 @@ Additional description about the project and its features.
     - React
     - linters
     - gitflows
+    
+  - Browse Project: [live link](https://modest-stonebraker-74ff1d.netlify.app/)
 
 
 ### Install dependancies
