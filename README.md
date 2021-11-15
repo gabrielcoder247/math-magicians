@@ -16,7 +16,8 @@ Additional description about the project and its features.
     - linters
     - gitflows
     
-  - Browse Project: [live link](https://modest-stonebraker-74ff1d.netlify.app/)
+  ### Browse Project
+  - Netlify: [live link](https://modest-stonebraker-74ff1d.netlify.app/)
 
 
 ### Install dependancies
